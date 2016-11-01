@@ -1,0 +1,11 @@
+{
+    "compilerOptions": {
+        "allowJs": true,
+        "allowSyntheticDefaultImports": true,
+        "module": "commonjs",
+        "moduleResolution": "node"
+    },
+    "exclude": [
+        "node_modules"
+    ]
+}

@@ -19,6 +19,8 @@ import A from 'components/A';
 
 import styles from './styles.css';
 
+import { Button } from 'antd'
+
 function App(props) {
   return (
     <div className={styles.wrapper}>
@@ -28,7 +30,8 @@ function App(props) {
         meta={[
           { name: 'description', content: 'A React.js Boilerplate application' },
         ]}
-      />
+        />
+      <Button type="primary">Hello</Button>      
       <A className={styles.logoWrapper} href="https://twitter.com/mxstbr">
         <Img className={styles.logo} src={Banner} alt="react-boilerplate - Logo" />
       </A>
