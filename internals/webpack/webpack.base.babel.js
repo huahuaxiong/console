@@ -5,11 +5,9 @@
  */
 
 
-
 const path = require('path');
 
 const webpack = require('webpack');
-
 
 
 // PostCSS plugins
@@ -19,7 +17,6 @@ const cssnext = require('postcss-cssnext');
 const postcssFocus = require('postcss-focus');
 
 const postcssReporter = require('postcss-reporter');
-
 
 
 module.exports = (options) => ({
@@ -116,16 +113,16 @@ module.exports = (options) => ({
 
   plugins: options.plugins.concat([
 
-    new webpack.ContextReplacementPlugin(/^\.\/locale$/, context => {
-  if (!/\/moment\//.test(context.context)) { return }
+    new webpack.ContextReplacementPlugin(/^\.\/locale$/, (context) => {
+      if (!/\/moment\//.test(context.context)) { return; }
   // context needs to be modified in place
-  Object.assign(context, {
+      Object.assign(context, {
     // include only CJK
-    regExp: /^\.\/(ja|ko|zh)/,
+        regExp: /^\.\/(ja|ko|zh)/,
     // point to the locale data folder relative to moment's src/lib/locale
-    request: '../../locale'
-  })
-}),
+        request: '../../locale',
+      });
+    }),
 
     new webpack.ProvidePlugin({
 
@@ -134,7 +131,6 @@ module.exports = (options) => ({
       fetch: 'exports?self.fetch!whatwg-fetch',
 
     }),
-
 
 
     // Always expose NODE_ENV to webpack, in order to use `process.env.NODE_ENV`
