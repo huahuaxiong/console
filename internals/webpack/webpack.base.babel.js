@@ -65,11 +65,11 @@ module.exports = (options) => ({
 
       // So, no need for ExtractTextPlugin here.
 
-      test: /\.css$/,
+      test: /\.(css|less)$/,
 
-      include: /node_modules/,
+      include: /node_modules|ant-theme/,
 
-      loaders: ['style-loader', 'css-loader'],
+      loaders: ['style-loader', 'css-loader', 'less-loader'],
 
     }, {
 
